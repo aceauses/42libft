@@ -48,5 +48,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (start < end)
 		mem[j++] = s1[start++];
 	mem[j] = 0;
+	free((char *)s1);
 	return (mem);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceauses <aceauses@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: aceauses <aceauses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:53:48 by aceauses          #+#    #+#             */
-/*   Updated: 2023/04/12 16:37:46 by aceauses         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:04:07 by aceauses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!mem)
 		return (NULL);
 	if (!s1)
-		return (NULL);
+		return (free(mem), NULL);
 	j = 0;
 	while (start < end)
 		mem[j++] = s1[start++];
-	mem[j] = 0;
-	free((char *)s1);
+	mem[j] = '\0';
 	return (mem);
 }
